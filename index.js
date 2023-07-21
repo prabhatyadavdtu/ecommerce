@@ -15,7 +15,7 @@ const LocalStrategy = require('passport-local');
 
 //mongodb+srv://prabhat011kumar:<bazhlzCCQbEnrRoB>@cluster0.jgchaxv.mongodb.net/?retryWrites=true&w=majority
 
-mongoose.connect(process.env.MONGO_URI)
+mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true })
 .then(()=>console.log('DB connected successfully'.blue))
 .catch((err)=>console.log(err))
 
