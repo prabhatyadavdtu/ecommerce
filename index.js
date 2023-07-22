@@ -13,11 +13,12 @@ const User = require('./models/User');
 const passport = require('passport');
 const LocalStrategy = require('passport-local');
 
-//mongodb+srv://prabhat011kumar:<bazhlzCCQbEnrRoB>@cluster0.jgchaxv.mongodb.net/?retryWrites=true&w=majority
+const url = process.env.MONGO_URI;
 
-mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true })
+mongoose.connect(url)
 .then(()=>console.log('DB connected successfully'.blue))
 .catch((err)=>console.log(err))
+
 
 let secret = process.env.SECRET || 'weneedabettersecretkey';
 
@@ -67,4 +68,4 @@ app.get('/', (req,res)=>{
     res.render('homepage');
 })
 
-app.listen(port, () => console.log(`Server listening at http://localhost:3000`.red))   
+app.listen(port, () => console.log(`Server listening at http://localhost:${port}`.red))   
