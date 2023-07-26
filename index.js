@@ -14,7 +14,7 @@ const passport = require('passport');
 const LocalStrategy = require('passport-local');
 
 const url = process.env.MONGO_URI;
-
+mongoose.set("strictQuery", false);
 mongoose.connect(url)
 .then(()=>console.log('DB connected successfully'.blue))
 .catch((err)=>console.log(err))
