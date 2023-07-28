@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const Product = require("./models/Product")
 
-mongoose.connect('mongodb+srv://prabhat011kumar:bazhlzCCQbEnrRoB@cluster0.jgchaxv.mongodb.net/?retryWrites=true&w=majority')
+mongoose.connect("mongodb+srv://prabhat011kumar:QVUX0f1C21T9upGD@cluster0.jgchaxv.mongodb.net/test?retryWrites=true&w=majority&ssl=true")
 .then(()=>console.log('DB connected successfully'.blue))
 .catch((err)=>console.log(err))
 
